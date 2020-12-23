@@ -96,7 +96,7 @@ header button:focus {
     text-overflow: ellipsis;
     white-space: nowrap;
     position: relative;
-    left: 8px;
+    left: 15px;
     margin-right: 0
 }
 

@@ -6,21 +6,23 @@
     <meta name="viewport" content="initial-scale=1">
     <meta name="supported-color-schemes" content="light dark">
     <title>Typora</title>
-    <link rel="stylesheet" href="../static/css/bootstrap.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/mermaid.css"
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" crossorigin="anonymous">
+    <link rel="stylesheet" css-include="" href="../../static/css/mermaid.css"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/font-awesome-4.1.0/css/font-awesome.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/ionicons-2.0.1/css/ionicons.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/typora-icon/style.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/base.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/base-control.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/codemirror.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/window.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style/megamenu.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/themes/panda.css" id="theme_css" crossorigin="anonymous">
-    {#    <link rel="stylesheet" href="" id="base_user_css" crossorigin="anonymous">#}
-    {#    <link rel="stylesheet" href="" id="theme_user_css" crossorigin="anonymous">#}
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({
+    <link rel="stylesheet" href="../../static/style/font-awesome-4.1.0/css/font-awesome.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style/ionicons-2.0.1/css/ionicons.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style/typora-icon/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" css-include="" href="../../static/style/base.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style/base-control.css" crossorigin="anonymous">
+    <link rel="stylesheet" css-include="" href="../../static/style/codemirror.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style/window.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style/megamenu.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/themes/panda.css" id="theme_css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/css/custon.css" id="theme_css" crossorigin="anonymous">
+    {#    <link rel="stylesheet" href="../../static/themes/base.user.css" id="base_user_css" crossorigin="anonymous">#}
+    {#    <link rel="stylesheet" href="../../static/themes/panda.user.css" id="theme_user_css" crossorigin="anonymous">#}
+    <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({
 			messageStyle: "none",
 			skipStartupTypeset: true,
 			jax: ["input/TeX", "output/SVG"],
@@ -35,7 +37,7 @@
 					fontSize:"90%", color:"red", background:"",
       				border: "1px solid red", padding:"2px"
 				},
-				scale: 100, 
+				scale: 100,
 				minScaleAdjust: 80,
 				blacker: 0,
 				matchFontHeight: false,
@@ -79,9 +81,62 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
+    <style type="text/css">.MathJax_Preview {
+        color: #888
+    }
+
+    #MathJax_Message {
+        position: fixed;
+        left: 1px;
+        bottom: 2px;
+        background-color: #E6E6E6;
+        border: 1px solid #959595;
+        margin: 0px;
+        padding: 2px 8px;
+        z-index: 102;
+        color: black;
+        font-size: 80%;
+        width: auto;
+        white-space: nowrap
+    }
+
+    #MathJax_MSIE_Frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0px;
+        z-index: 101;
+        border: 0px;
+        margin: 0px;
+        padding: 0px
+    }
+
+    .MathJax_Error {
+        color: #CC0000;
+        font-style: italic
+    }
+    </style>
 </head>
-<body class="typora-node native-window no-collapse-outline allow-file-tree-scroll">
+<body class="typora-node native-window allow-file-tree-scroll show-footer os-linux">
+<div id="MathJax_Message" style="display: none;"></div>
 <header aria-hidden="true">
     <div aria-hidden="true" class="dropdown-menu stopselect dropmenu" id="toc-dropmenu" role="menu">
         <div class="outline-title-wrapper"><span class="outline-title" data-localize="Outline"
@@ -90,7 +145,7 @@
         <div class="divider outline-title-divider"></div>
         <div role="list" id="toc-content" class="outline-content" data-after-content="Outline is Empty."></div>
     </div>
-    <div aria-hidden="true" class="stopselect dropmenu sidebar-menu" id="typora-sidebar" role="menu">
+    <div aria-hidden="true" class="stopselect dropmenu sidebar-menu active-tab-outline" id="typora-sidebar" role="menu">
         <div class="info-panel-tab-wrapper ty-tab-wrapper">
             <div style="flex:1"></div>
             <div class="info-panel-tab" id="info-panel-tab-file">
@@ -115,18 +170,21 @@
         <div class="sidebar-osx-tab ty-tab-wrapper">
             <div class="sidebar-tabs">
                 <div class="sidebar-tab-btn" id="switch-sidebar-icon"><span class="ty-icon ty-three-cells"
-                                                                            ty-hint="Switch to File List view"></span>
+                                                                            ty-hint="Switch to File List view"
+                                                                            aria-label="Switch to File List view"></span>
                 </div>
                 <div class="sidebar-tab" id="sidepanel-segmented-input-files"></div>
                 <div class="sidebar-tab" id="sidepanel-segmented-input-outline" data-localize="Outline" data-lg="Front">
                     Outline
                 </div>
-                <div class="sidebar-tab-btn" id="sidebar-search-btn" ty-hint="Search"><span
+                <div class="sidebar-tab-btn" id="sidebar-search-btn" ty-hint="Search" aria-label="Search"><span
                         class="ion-ios7-search-strong"></span></div>
             </div>
             <div class="ty-sidebar-search-panel" id="ty-sidebar-search-tabs">
                 <div class="sidebar-tab-btn" id="ty-sidebar-search-back-btn"><span class="ty-icon ty-left-arrow"
-                                                                                   ty-hint="Close Search"></span></div>
+                                                                                   ty-hint="Close Search"
+                                                                                   aria-label="Close Search"></span>
+                </div>
             </div>
         </div>
         <div class="sidebar-content" id="sidebar-content">
@@ -187,8 +245,9 @@
                             <div class="oversize-list-template-mark"><i class="fa fa-exclamation-triangle"
                                                                         aria-hidden="true"></i></div>
                             <div data-localize="Selected folders contains too many files. \nPlease switch to <a id='switch-to-tree-on-oversize'>File Tree view</a> for better performance."
-                                 data-lg="Front" data-lt="html">Selected folders contains too many files. Please switch
-                                to <a id="switch-to-tree-on-oversize">File Tree view</a> for better performance.
+                                 data-lg="Front" data-lt="html">Selected folders contains too many files.
+                                Please switch to <a id="switch-to-tree-on-oversize">File Tree view</a> for better
+                                performance.
                             </div>
                         </div>
                     </div>
@@ -270,61 +329,68 @@
         <div class="sidebar-footer no-selection" id="ty-sidebar-footer">
             <div style="display: -webkit-flex;display: flex;background:inherit">
                 <div class="sidebar-footer-item footer-item-right footer-btn file-action-item not-empty-menu-group"
-                     id="sidebar-new-file-btn" ty-hint="New File"><span class="ty-icon ty-add"
-                                                                        style="position:relative;top:1px"></span></div>
-                <div class="sidebar-footer-item footer-item-left footer-btn outline-action-item" id="unpin-outline-btn"
-                     ty-hint="Unpin Outline Panel"><span><span class="ty-icon ty-export1"></span> <span></span></span>
+                     id="sidebar-new-file-btn" ty-hint="New File" aria-label="New File"><span class="ty-icon ty-add"
+                                                                                              style="position:relative;top:1px"></span>
                 </div>
-                <div class="sidebar-footer-main-item" id="sidebar-menu-btn">
-                    <span class="sidebar-footer-item">
-                        <span class="sidebar-footer-main-item-label"
-                              id="sidebar-footer-main-item-label">Open Folder... </span>
-                        <span class="footer-btn">
-                        <span class="ty-icon ty-dots-v" aria-hidden="true"></span>
-                    </span>
-                </span>
+                <div class="sidebar-footer-item footer-item-left footer-btn outline-action-item" id="unpin-outline-btn"
+                     ty-hint="Unpin Outline Panel" aria-label="Unpin Outline Panel"><span><span
+                        class="ty-icon ty-export1"></span> <span></span></span></div>
+                <div class="sidebar-footer-main-item" id="sidebar-menu-btn"><span class="sidebar-footer-item"><span
+                        class="sidebar-footer-main-item-label"
+                        id="sidebar-footer-main-item-label">Open Folder... </span><span class="footer-btn"><span
+                        class="ty-icon ty-dots-v" aria-hidden="true"></span></span></span>
                     <ul id="sidebar-files-menu" class="dropdown-menu" role="menu" aria-labelledby="drop5" tabindex="-1">
-                        <li role="presentation" class="menuitem-group-label file-action-item not-empty-menu-group">
-                            <span data-localize="Action" data-lg="Front">Action</span>
-                            <span class="ty-icon ty-delete-button" ty-hint="Close Sidebar Menu"
-                                  id="close-sidebar-menu-btn"></span>
+                        <li role="presentation" class="menuitem-group-label file-action-item not-empty-menu-group"><span
+                                data-localize="Action" data-lg="Front">Action</span> <span
+                                class="ty-icon ty-delete-button" ty-hint="Close Sidebar Menu"
+                                id="close-sidebar-menu-btn" aria-label="Close Sidebar Menu"></span></li>
+                        <li role="presentation" class="file-action-item not-empty-menu-group"><a role="menuitem"
+                                                                                                 tabindex="-1" href="#"
+                                                                                                 id="new-file-from-sidebar-menu"
+                                                                                                 data-localize="New File"
+                                                                                                 data-lg="Front">New
+                            File</a></li>
+                        <li role="presentation" class="file-action-item not-empty-menu-group"><a role="menuitem"
+                                                                                                 tabindex="-1" href="#"
+                                                                                                 id="search-from-sidebar-menu"
+                                                                                                 data-localize="Search"
+                                                                                                 data-lg="Menu">Search</a>
                         </li>
-                        <li role="presentation" class="file-action-item not-empty-menu-group">
-                            <a role="menuitem" tabindex="-1" href="#" id="new-file-from-sidebar-menu"
-                               data-localize="New File" data-lg="Front">New File</a>
-                        </li>
-
-                        <li role="presentation" class="file-action-item not-empty-menu-group">
-                            <a role="menuitem" tabindex="-1" href="#" id="search-from-sidebar-menu"
-                               data-localize="Search" data-lg="Menu">Search</a>
-                        </li>
-
-                        <li role="presentation" class="file-action-item not-empty-menu-group">
-                            <a role="menuitem" tabindex="-1" href="#" id="reveal-folder-from-sidebar-menu"
-                               data-localize="Reveal in Finder" data-lg="Front">Reveal in Finder</a>
-                        </li>
-                        <li role="presentation" class="file-action-item not-empty-menu-group">
-                            <a role="menuitem" tabindex="-1" href="#" id="open-folder-from-sidebar-menu"
-                               data-localize="Open Folder..." data-lg="Front">Open Folder...</a>
-                        </li>
-                        <li role="presentation" class="file-action-item not-empty-menu-group">
-                            <a role="menuitem" tabindex="-1" href="#" id="refresh-from-sidebar-menu"
-                               data-localize="Refresh Folder" data-lg="Front">Refresh Folder</a>
-                        </li>
+                        <li role="presentation" class="file-action-item not-empty-menu-group"><a role="menuitem"
+                                                                                                 tabindex="-1" href="#"
+                                                                                                 id="reveal-folder-from-sidebar-menu"
+                                                                                                 data-localize="Reveal in Finder"
+                                                                                                 data-lg="Front">Reveal
+                            in File Explorer</a></li>
+                        <li role="presentation" class="file-action-item not-empty-menu-group"><a role="menuitem"
+                                                                                                 tabindex="-1" href="#"
+                                                                                                 id="open-folder-from-sidebar-menu"
+                                                                                                 data-localize="Open Folder..."
+                                                                                                 data-lg="Front">Open
+                            Folder...</a></li>
+                        <li role="presentation" class="file-action-item not-empty-menu-group"><a role="menuitem"
+                                                                                                 tabindex="-1" href="#"
+                                                                                                 id="refresh-from-sidebar-menu"
+                                                                                                 data-localize="Refresh Folder"
+                                                                                                 data-lg="Front">Refresh
+                            Folder</a></li>
                         <li role="presentation"
                             class="menuitem-group-label file-action-item file-sort-item not-empty-menu-group"><span
                                 data-localize="Sort" data-lg="Front">Sort</span> <span
                                 class="sort-button-area"><span><span id="ty-group-by-folder-btn"
                                                                      class="ty-icon ty-package ty-side-sort-btn active"
-                                                                     ty-hint="Group By Folder"></span> </span><span><span
+                                                                     ty-hint="Group By Folder"
+                                                                     aria-label="Group By Folder"></span> </span><span><span
                                 id="ty-sort-by-natural-btn"
                                 class="ty-icon ty-sort-by-natural ty-side-sort-btn ty-side-sort-btn2 active"
-                                ty-hint="Sort Naturally"></span> <span id="ty-sort-by-name-btn"
-                                                                       class="ty-icon ty-sort-by-alphabet-a ty-side-sort-btn ty-side-sort-btn2"
-                                                                       ty-hint="Sort by Name (Ascending)"></span> <span
+                                ty-hint="Sort Naturally (Ascending)" aria-label="Sort Naturally"></span> <span
+                                id="ty-sort-by-name-btn"
+                                class="ty-icon ty-sort-by-alphabet-a ty-side-sort-btn ty-side-sort-btn2"
+                                ty-hint="Sort by Name (Ascending)" aria-label="Sort by Name (Ascending)"></span> <span
                                 id="ty-sort-by-date-btn"
                                 class="ty-icon ty-sort-by-date-a ty-side-sort-btn ty-side-sort-btn2"
-                                ty-hint="Sort by Modification Date (Ascending)"></span></span></span>
+                                ty-hint="Sort by Modification Date (Ascending)"
+                                aria-label="Sort by Modification Date (Ascending)"></span></span></span>
                             <div class="clearfix"></div>
                         </li>
                         <li role="presentation" class="menuitem-group-label file-action-item folder-menu-group show">
@@ -345,16 +411,17 @@
                     </ul>
                 </div>
                 <div class="sidebar-footer-item footer-item-right footer-btn file-action-item not-empty-menu-group"
-                     id="switch-file-list-btn" ty-hint="Switch File List/Tree View"><span
-                        class="switch-file-list-btn-to-list"><span class="ty-icon ty-three-cells"></span> </span><span
-                        class="switch-file-list-btn-to-tree"><span class="ty-icon ty-file-tree"></span></span></div>
+                     id="switch-file-list-btn" ty-hint="Switch File List/Tree View"
+                     aria-label="Switch File List/Tree View"><span class="switch-file-list-btn-to-list"><span
+                        class="ty-icon ty-three-cells"></span> </span><span class="switch-file-list-btn-to-tree"><span
+                        class="ty-icon ty-file-tree"></span></span></div>
             </div>
         </div>
     </div>
     <div aria-hidden="true" id="typora-sidebar-resizer">
         <div class="typora-sidebar-resizer-bar"></div>
     </div>
-    <div id="top-titlebar" class="stopselect">
+    <div id="top-titlebar" class="stopselect" style="">
         <span id="w-titlebar-left">
             <span class="toolbar-icon" style="float:left" id="w-menu-btn">
                 <span class="ty-menu-btn-area">
@@ -363,40 +430,82 @@
                     <span class="ty-menu-btn-area-sub ty-menu-btn-area-sub3"></span>
                 </span>
             </span>
-            <span class="title-text" id="title-text">Typora</span>
+{#            <span class="title-text" id="title-text">Typora</span>#}
         </span>
 
-        <span id="w-traffic-lights">
-            <span id="w-min" class="btn toolbar-icon">
-                <span class="ty-icon ty-minimize10"></span>
-            </span>
-            <span id="w-max-group" class="">
-                <span id="w-max" class="btn toolbar-icon">
-                    <span class="ty-icon ty-maximize10"></span>
-                </span>
-                <span id="w-full" class="btn toolbar-icon">
-                    <span class="ion-arrow-resize"></span>
-                </span>
-                <span id="w-pin" class="btn toolbar-icon">
-                    <span class="ion-pin"></span>
-                </span>
-            </span>
-            <span id="w-unpin" class="btn toolbar-icon">
-                <span class="ion-pin"></span>
-            </span>
-            <span id="w-restore" class="btn toolbar-icon">
-                <svg x="0px" y="0px" viewBox="0 0 10.2 10.2" style="width:12px;height:12px"
-                     data-reactid=".1.$win.0.$=10.$=11.$=11.0">
-                <path d="M2.1,0v2H0v8.1h8.2v-2h2V0H2.1z M7.2,9.2H1.1V3h6.1V9.2z M9.2,7.1h-1V2H3.1V1h6.1V7.1z"
-                      data-reactid=".1.$win.0.$=10.$=11.$=11.0.0"></path>
-                </svg>
-            </span>
-            <span id="w-close" class="btn toolbar-icon"></span>
-            <span class="ty-icon ty-close10"></span>
+        <span id="tool-page">
+        <a class="title-text" id="title-text" href="https://www.baidu.com">Tool Page</a>
         </span>
-        <span id="w-top-margin"></span>
+        {#        <span id="w-traffic-lights">#}
+        {#            <span id="w-min" class="btn toolbar-icon">#}
+        {#                <span class="ty-icon ty-minimize10"></span>#}
+        {#            </span>#}
+        {#            <span id="w-max-group" class="">#}
+        {#                <span id="w-max" class="btn toolbar-icon">#}
+        {#                    <span class="ty-icon ty-maximize10"></span> #}
+        {#                </span>#}
+        {#                <span id="w-full" class="btn toolbar-icon">#}
+        {#                    <span class="ion-arrow-resize"></span>#}
+        {#                </span>#}
+        {#                <span id="w-pin" class="btn toolbar-icon">#}
+        {#                    <span class="ion-pin"></span>#}
+        {#                </span>#}
+        {#            </span>#}
+        {#            <span id="w-unpin" class="btn toolbar-icon">#}
+        {#                <span class="ion-pin"></span>#}
+        {#            </span>#}
+        {#            <span id="w-restore" class="btn toolbar-icon">#}
+        {#                <svg x="0px" y="0px" viewBox="0 0 10.2 10.2"#}
+        {#                                                               style="width:12px;height:12px"#}
+        {#                                                               data-reactid=".1.$win.0.$=10.$=11.$=11.0">#}
+        {#                    <path#}
+        {#                    d="M2.1,0v2H0v8.1h8.2v-2h2V0H2.1z M7.2,9.2H1.1V3h6.1V9.2z M9.2,7.1h-1V2H3.1V1h6.1V7.1z"#}
+        {#                    data-reactid=".1.$win.0.$=10.$=11.$=11.0.0"></path>#}
+        {#                </svg> #}
+        {#            </span>#}
+        {#            <span id="w-close"#}
+        {#                                                                                           class="btn toolbar-icon"><span#}
+        {#                class="ty-icon ty-close10"></span> #}
+        {#            </span>#}
+        {#        </span>#}
     </div>
-
+    <div class="megamenu-menu stopselect" id="megamenu-menu-sidebar">
+        <div class="megamenu-menu-header quiet-focus" tabindex="-1"><a class="menu-style-btn" id="megamenu-back-btn"><i
+                class="ion-android-arrow-back"></i></a> <a id="megamenu-menu-header-title"><span
+                class="megamenu-menu-header-title-menu" data-localize="Menu" data-lg="Panel">Menu</span> <span
+                class="megamenu-menu-header-title-back" data-localize="Back" data-lg="Panel">Back</span></a></div>
+        <ul class="dropdown-menu megamenu-menu-list" id="megamenu-menu-list">
+            <li><a role="menuitem" id="m-new" title="New"><i class="fa fa-file-o"></i><span data-localize="New"
+                                                                                            data-lg="Menu">New</span></a>
+            </li>
+            <li><a role="menuitem" id="m-open" class="active" title="Open"><i class="fa fa-folder-open-o"></i><span
+                    data-localize="Open" data-lg="Menu">Open</span></a></li>
+            <li><a role="menuitem" id="m-save" title="Save"><i class="fa fa-save"></i><span data-localize="Save"
+                                                                                            data-lg="Menu">Save</span></a>
+                <a role="menuitem" id="m-saved" title="Saved"><i class="fa fa-check-circle-o"></i><span
+                        data-localize="Saved" data-lg="Front">Saved</span></a></li>
+            <li><a role="menuitem" id="m-save-as" title="Save As.."><i class="fa fa-paste"></i><span
+                    data-localize="Save As" data-lg="Menu">Save As</span></a></li>
+            <li class="divider"></li>
+            <li><a role="menuitem" id="m-export" title="Export"><i class="fa fa-share-square-o"></i><span
+                    data-localize="Export" data-lg="Menu">Export</span></a></li>
+            <li><a role="menuitem" id="m-print" title="Print"><i class="fa fa-print"></i><span data-localize="Print"
+                                                                                               data-lg="Menu">Print</span></a>
+            </li>
+            <li class="divider"></li>
+            <li><a role="menuitem" id="m-theme" title="Theme"><i class="fa fa-magic"></i><span data-localize="Themes"
+                                                                                               data-lg="Menu">Themes</span></a>
+            </li>
+            <li><a role="menuitem" id="m-preference" title="Preferences"><i class="fa fa-cog"></i><span
+                    data-localize="Preferences" data-lg="Menu">Preferences</span></a></li>
+            <li><a role="menuitem" id="m-about" title="About"><i class="fa fa-question-circle"></i><span
+                    data-localize="About" data-lg="Menu">About</span></a></li>
+            <li class="divider"></li>
+            <li><a role="menuitem" id="m-close" title="Close"><i class="fa fa-power-off"></i><span data-localize="Close"
+                                                                                                   data-lg="Front">Close</span></a>
+            </li>
+        </ul>
+    </div>
 </header>
 <content>
     <div id="md-searchpanel" class="form-inline searchpanel-replace-mode">
@@ -413,10 +522,9 @@
                         class="fa fa-sort-asc"></i></span></div>
             </div>
             <div style="-webkit-flex:1; flex: 1">
-                <div class="ty-search-panel-row">
-                    <input type="text" class="form-control" data-localize="search text"
-                           data-lg="Front" placeholder="search text" autocorrect="off"
-                           spellcheck="false" autocapitalize="off" id="search-panel-input">
+                <div class="ty-search-panel-row"><input type="text" class="form-control" data-localize="search text"
+                                                        data-lg="Front" placeholder="search text" autocorrect="off"
+                                                        spellcheck="false" autocapitalize="off" id="search-panel-input">
                     <span ty-hint="Case Sensitive" id="searchpanel-case-option-btn"
                           class="searchpanel-search-option-btn" aria-label="Case Sensitive"><svg class="icon"><use
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -424,8 +532,8 @@
                                                                                                id="searchpanel-word-option-btn"
                                                                                                class="searchpanel-search-option-btn"
                                                                                                aria-label="Whole Word"><svg
-                        class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          xlink:href="#find-and-replace-icon-word"></use></svg></span></div>
+                            class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                              xlink:href="#find-and-replace-icon-word"></use></svg></span></div>
                 <div class="ty-search-panel-row ty-replace-panel-row"><input type="text" class="form-control"
                                                                              data-localize="replace with"
                                                                              data-lg="Front" placeholder="replace with"
@@ -575,12 +683,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close">&times;</button>
+                    <button type="button" class="close">×</button>
                     <div class="modal-title" data-localize="Copy Image to…" data-lg="Front">Copy Image to…</div>
                 </div>
                 <div class="modal-body">
                     <div class="row"
-                         data-localize='Typora are trying copy the newly inserted image to folder <code id="image-create-folder-target"></code> according to your YAML Front Matter setting. But the target folder does not exist, create it now?'
+                         data-localize="Typora are trying copy the newly inserted image to folder <code id=&quot;image-create-folder-target&quot;></code> according to your YAML Front Matter setting. But the target folder does not exist, create it now?"
                          data-lg="Front" data-lt="html">Typora are trying copy the newly inserted image to folder <code
                             id="image-create-folder-target"></code> according to your YAML Front Matter setting. But the
                         target folder does not exist, create it now?
@@ -594,7 +702,7 @@
                             data-lg="Front">Cancel
                     </button>
                     <button type="button" class="btn btn-default image-create-folder-dialog-help" style="float:left"
-                            data-localize="More Info" data-lg="Front">Learn More…
+                            data-localize="More Info" data-lg="Front">More Info
                     </button>
                 </div>
             </div>
@@ -806,7 +914,11 @@
                                                       aria-label="zoom in"><i class="ion-plus-round"></i></span> <span
             id="zoom-hint-reset" role="button" class="zoom-hint-button" aria-label="reset zoom factor">Reset</span>
     </div>
-    <div id="write" contenteditable="false" spellcheck="true" tabindex="-1"><p>&nbsp;</p></div>
+    <div id="write" contenteditable="true" spellcheck="true" tabindex="-1" class="enable-diagrams"><p cid="n0"
+                                                                                                      mdtype="paragraph"
+                                                                                                      contenteditable="true"
+                                                                                                      class="md-end-block md-p md-focus"></p>
+    </div>
     <canvas style="display:none" id="video-canvas"></canvas>
     <div id="ty-oversize-body" contenteditable="false" style="display: none">
         <div class="ty-oversize-modal">
@@ -831,7 +943,7 @@
         <li data-group="copy-paste" data-key="paste"><a role="menuitem" data-localize="Paste" data-lg="Menu">Paste</a>
         </li>
     </ul>
-    <ul class="dropdown-menu context-menu" id="context-menu" role="menu">
+    <ul class="dropdown-menu context-menu" id="context-menu" role="menu" style="top: 160px; left: 514px;">
         <li data-group="image" data-key="reveal-img-in-finder" class="hide"><a role="menuitem"><span
                 data-localize="Open Image Location…" data-lg="Menu">Open Image Location…</span></a></li>
         <li data-group="image" data-key="reveal-img-in-browser" class="hide"><a role="menuitem"><span
@@ -841,7 +953,7 @@
         <li data-group="image" data-key="select-img-target" class="hide"><a role="menuitem"><span
                 data-localize="Copy Image to…" data-lg="Menu">Copy Image to…</span></a></li>
         <li data-group="image" data-key="upload-img" class="hide"><a role="menuitem"><span data-localize="Upload Image"
-                                                                                           data-lg="Menu">Upload Images</span></a>
+                                                                                           data-lg="Menu">Upload Image</span></a>
         </li>
         <li data-group="image" data-key="zoom-img" class="hide has-extra-menu"><a role="menuitem"><span
                 data-localize="Zoom Image" data-lg="Menu">Zoom Image</span> <i class="fa fa-caret-right"></i></a></li>
@@ -852,85 +964,90 @@
                                                                                       data-lg="Menu">Pause</span></a>
         </li>
         <li class="divider hide" data-group="video"></li>
-        <li data-group="hyperlink" data-key="jumpto"><a role="menuitem" data-localize="Open Link" data-lg="Menu">Open
-            Link</a></li>
+        <li data-group="hyperlink" data-key="jumpto" class="hide"><a role="menuitem" data-localize="Open Link"
+                                                                     data-lg="Menu">Open Link</a></li>
         <li class="divider hide" data-group="hyperlink" id="divider-after-jumpto"></li>
         <li class="divider hide" data-group="spell-check" id="divider-before-learn"></li>
-        <li data-group="spell-check" data-key="learn"><a role="menuitem" data-localize="Learn Spelling" data-lg="Menu">Learn
-            Spelling</a></li>
-        <li data-group="spell-check" data-key="unlearn"><a role="menuitem" data-localize="Unlearn Spelling"
-                                                           data-lg="Menu">Unlearn Spelling</a></li>
-        <li class="divider" data-group="spell-check"></li>
-        <li id="search-service-placeholder" class="hide">
-        <li data-group="edit-block" data-key="edit"><a role="menuitem" data-localize="Edit" data-lg="Menu">Edit</a></li>
-        <li data-group="copy-paste" data-key="cut"><a role="menuitem" data-localize="Cut" data-lg="Menu">Cut</a></li>
-        <li data-group="copy-paste" data-key="copy"><a role="menuitem" data-localize="Copy" data-lg="Menu">Copy</a></li>
+        <li data-group="spell-check" data-key="learn" class="hide"><a role="menuitem" data-localize="Learn Spelling"
+                                                                      data-lg="Menu">Learn Spelling</a></li>
+        <li data-group="spell-check" data-key="unlearn" class="hide"><a role="menuitem" data-localize="Unlearn Spelling"
+                                                                        data-lg="Menu">Unlearn Spelling</a></li>
+        <li class="divider hide" data-group="spell-check"></li>
+        <li data-group="search" data-key="search-default" class="hide">
+            <a role="menuitem">Search with Google</a></li>
+        <li class="divider hide" data-group="search"></li>
+        <li data-group="edit-block" data-key="edit" class="hide"><a role="menuitem" data-localize="Edit" data-lg="Menu">Edit</a>
+        </li>
+        <li data-group="copy-paste" data-key="cut" class=""><a role="menuitem" data-localize="Cut"
+                                                               data-lg="Menu">Cut</a></li>
+        <li data-group="copy-paste" data-key="copy" class=""><a role="menuitem" data-localize="Copy"
+                                                                data-lg="Menu">Copy</a></li>
         <li data-group="emoji" data-key="copy-emoji" class="hide"><a role="menuitem"><span data-localize="Copy Emoji"
                                                                                            data-lg="Menu">Copy Emoji</span></a>
         </li>
         <li data-group="image" data-key="copy-img" class="hide"><a role="menuitem"><span data-localize="Copy Image"
                                                                                          data-lg="Menu">Copy Image</span></a>
         </li>
-        <li data-group="copy-paste" data-key="paste"><a role="menuitem" data-localize="Paste" data-lg="Menu">Paste</a>
+        <li data-group="copy-paste" data-key="paste" class=""><a role="menuitem" data-localize="Paste" data-lg="Menu">Paste</a>
         </li>
         <li data-key="copy-as" data-group="copy-paste" class="has-extra-menu"><a role="menuitem"><span
                 data-localize="Copy / Paste As…" data-lg="Menu">Copy / Paste As…</span> <i
                 class="fa fa-caret-right"></i></a></li>
         <li class="divider"></li>
         <li data-group="inline-style" class="has-btn-submenu"><span class="menu-item-container"><a
-                class="menu-style-btn" data-key data-style="strong"><i class="fa fa-bold"></i></a> <a
-                class="menu-style-btn" data-key data-style="em"><i class="fa fa-italic"></i></a> <a
-                class="menu-style-btn" data-key data-style="code"><i class="fa fa-asterisk"></i></a> <a
-                class="menu-style-btn" data-key data-style="link"><i class="fa fa-link"></i><i class="fa fa-unlink"></i></a></span>
-        </li>
+                class="menu-style-btn" data-key="" data-style="strong"><i class="fa fa-bold"></i></a> <a
+                class="menu-style-btn" data-key="" data-style="em"><i class="fa fa-italic"></i></a> <a
+                class="menu-style-btn" data-key="" data-style="code"><i class="fa fa-asterisk"></i></a> <a
+                class="menu-style-btn" data-key="" data-style="link"><i class="fa fa-link"></i><i
+                class="fa fa-unlink"></i></a></span></li>
         <li data-group="block-wrap" class="has-btn-submenu"><span class="menu-item-container"><a class="menu-style-btn"
-                                                                                                 data-key
+                                                                                                 data-key=""
                                                                                                  data-indent="blockquote"><i
-                class="fa fa-quote-left"></i></a> <a class="menu-style-btn" data-key data-indent="ol"><i
-                class="fa fa-list-ol"></i></a> <a class="menu-style-btn" data-key data-indent="ul"><i
-                class="fa fa-list-ul"></i></a> <a class="menu-style-btn" data-key data-indent="tasklist"><i
+                class="fa fa-quote-left"></i></a> <a class="menu-style-btn" data-key="" data-indent="ol"><i
+                class="fa fa-list-ol"></i></a> <a class="menu-style-btn" data-key="" data-indent="ul"><i
+                class="fa fa-list-ul"></i></a> <a class="menu-style-btn" data-key="" data-indent="tasklist"><i
                 class="fa fa-check-square-o"></i></a></span></li>
-        <li data-group="block-tab" data-block-auto-hide class="has-btn-submenu"><span class="menu-item-container"><a
-                class="menu-style-btn menu-style-btn-2width" data-key data-tab="left"><i class="fa fa-outdent"></i></a> <a
-                class="menu-style-btn menu-style-btn-2width" data-key data-tab="right"><i class="fa fa-indent"></i></a></span>
-        </li>
+        <li data-group="block-tab" data-block-auto-hide="" class="has-btn-submenu hide"><span
+                class="menu-item-container"><a class="menu-style-btn menu-style-btn-2width" data-key="" data-tab="left"><i
+                class="fa fa-outdent"></i></a> <a class="menu-style-btn menu-style-btn-2width" data-key=""
+                                                  data-tab="right"><i class="fa fa-indent"></i></a></span></li>
         <li class="divider" data-group="inline-style"></li>
-        <li data-key="table" data-group="table" class="has-extra-menu"><a role="menuitem"><span data-localize="Table"
-                                                                                                data-lg="Menu">Table</span>
+        <li data-key="table" data-group="table" class="has-extra-menu hide"><a role="menuitem"><span
+                data-localize="Table" data-lg="Menu">Table</span> <i class="fa fa-caret-right"></i></a></li>
+        <li data-key="math" class="has-extra-menu hide"><a role="menuitem"><span data-localize="Math" data-lg="Menu">Math</span>
             <i class="fa fa-caret-right"></i></a></li>
-        <li data-key="math" class="has-extra-menu"><a role="menuitem"><span data-localize="Math"
-                                                                            data-lg="Menu">Math</span> <i
-                class="fa fa-caret-right"></i></a></li>
         <li data-key="block-style" class="has-extra-menu"><a role="menuitem"><span data-localize="Paragraph"
                                                                                    data-lg="Menu">Paragraph</span> <i
                 class="fa fa-caret-right"></i></a></li>
         <li data-key="insert" class="has-extra-menu"><a role="menuitem"><span data-localize="Insert" data-lg="Menu">Insert</span>
             <i class="fa fa-caret-right"></i></a></li>
-        <li class="divider" data-group="delete-block"></li>
-        <li data-key="delete-block" data-group="delete-block"><a role="menuitem" data-localize="Delete" data-lg="Menu">Delete</a>
-        </li>
+        <li class="divider hide" data-group="delete-block"></li>
+        <li data-key="delete-block" data-group="delete-block" class="hide"><a role="menuitem" data-localize="Delete"
+                                                                              data-lg="Menu">Delete</a></li>
         <li class="divider" data-group="dev-tool"></li>
-        <li data-group="dev-tool" data-key="dev-tool"><a role="menuitem" data-localize="Inspect Element" data-lg="Menu">Inspect
-            Element</a></li>
+        <li data-group="dev-tool" data-key="dev-tool" class=""><a role="menuitem" data-localize="Inspect Element"
+                                                                  data-lg="Menu">Inspect Element</a></li>
     </ul>
-    <ul class="dropdown-menu context-menu ext-context-menu" id="block-style-menu" role="menu">
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header1" class="state-off"
-                                                data-localize="Heading 1" data-lg="Menu">Heading 1</a></li>
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header2" class="state-off"
-                                                data-localize="Heading 2" data-lg="Menu">Heading 2</a></li>
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header3" class="state-off"
-                                                data-localize="Heading 3" data-lg="Menu">Heading 3</a></li>
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header4" class="state-off"
-                                                data-localize="Heading 4" data-lg="Menu">Heading 4</a></li>
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header5" class="state-off"
-                                                data-localize="Heading 5" data-lg="Menu">Heading 5</a></li>
-        <li data-block-auto-disable data-key><a role="menuitem" data-block="header6" class="state-off"
-                                                data-localize="Heading 6" data-lg="Menu">Heading 6</a></li>
+    <ul class="dropdown-menu context-menu ext-context-menu" id="block-style-menu" role="menu"
+        style="top: 298.625px; left: 714px;">
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header1" class="state-off"
+                                                      data-localize="Heading 1" data-lg="Menu">Heading 1</a></li>
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header2" class="state-off"
+                                                      data-localize="Heading 2" data-lg="Menu">Heading 2</a></li>
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header3" class="state-off"
+                                                      data-localize="Heading 3" data-lg="Menu">Heading 3</a></li>
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header4" class="state-off"
+                                                      data-localize="Heading 4" data-lg="Menu">Heading 4</a></li>
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header5" class="state-off"
+                                                      data-localize="Heading 5" data-lg="Menu">Heading 5</a></li>
+        <li data-block-auto-disable="" data-key=""><a role="menuitem" data-block="header6" class="state-off"
+                                                      data-localize="Heading 6" data-lg="Menu">Heading 6</a></li>
         <li class="divider"></li>
-        <li data-key><a role="menuitem" data-block="paragraph" class="state-off state-on" data-localize="Paragraph"
-                        data-lg="Menu">Paragraph</a></li>
+        <li data-key=""><a role="menuitem" data-block="paragraph" class="state-off state-on" data-localize="Paragraph"
+                           data-lg="Menu">Paragraph</a></li>
     </ul>
-    <ul class="dropdown-menu context-menu ext-context-menu" id="edit-menu" role="menu">
+    <ul class="dropdown-menu context-menu ext-context-menu" id="edit-menu" role="menu"
+        style="top: 206.969px; left: 714px;">
         <li data-key="copy_as_markdown"><a role="menuitem" data-localize="Copy as Markdown" data-lg="Menu">Copy as
             Markdown</a></li>
         <li data-key="paste_as_plain"><a role="menuitem" data-localize="Paste as Plain Text" data-lg="Menu">Paste as
@@ -970,123 +1087,137 @@
         <li data-key="delete_table"><a role="menuitem" data-localize="Delete Table" data-lg="Menu">Delete Table</a></li>
     </ul>
     <ul class="dropdown-menu context-menu ext-context-menu" id="math-menu" role="menu">
-        <li data-key="copy_as_word" menu-for-win><a role="menuitem" data-localize="Copy to MS Word" data-lg="Menu">Copy
-            to MS Word</a></li>
+        <li data-key="copy_as_word" menu-for-win="" class="hide"><a role="menuitem" data-localize="Copy to MS Word"
+                                                                    data-lg="Menu">Copy to MS Word</a></li>
         <li data-key="copy_as_mathml"><a role="menuitem" data-localize="Copy as MathML" data-lg="Menu">Copy as
             MathML</a></li>
         <li data-key="copy_as_math_tex"><a role="menuitem" data-localize="Copy as Tex" data-lg="Menu">Copy as Tex</a>
         </li>
     </ul>
     <ul class="dropdown-menu context-menu ext-context-menu" id="search-menu" role="menu"></ul>
-    <ul class="dropdown-menu context-menu ext-context-menu" id="insert-menu" role="menu">
-        <li data-key data-group="inline-style"><a role="menuitem" data-style="image" class="state-off"
-                                                  data-localize="Image" data-lg="Menu">Image</a></li>
+    <ul class="dropdown-menu context-menu ext-context-menu" id="insert-menu" role="menu"
+        style="top: 322.281px; left: 714px;">
+        <li data-key="" data-group="inline-style"><a role="menuitem" data-style="image" class="state-off"
+                                                     data-localize="Image" data-lg="Menu">Image</a></li>
         <li class="divider" data-group="inline-style"></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="def_footnote" class="state-off"
-                                                data-localize="Footnotes" data-lg="Menu">Footnotes</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="def_link" class="state-off"
-                                                data-localize="Link Reference" data-lg="Menu">Link Reference</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="hr" class="state-off"
-                                                data-localize="Horizontal Line" data-lg="Menu">Horizontal Line</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="table" class="state-off"
-                                                data-localize="Table" data-lg="Menu">Table</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="fences" class="state-off"
-                                                data-localize="Code Fences" data-lg="Menu">Code Fences</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="math_block" class="state-off"
-                                                data-localize="Math Block" data-lg="Menu">Math Block</a></li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="toc" class="state-off"
-                                                data-localize="Table of Contents" data-lg="Menu">Table of Contents</a>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="def_footnote" class="state-off"
+                                                      data-localize="Footnotes" data-lg="Menu">Footnotes</a></li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="def_link" class="state-off"
+                                                      data-localize="Link Reference" data-lg="Menu">Link Reference</a>
         </li>
-        <li data-key data-block-auto-disable><a role="menuitem" data-insert="meta_block" class="state-off"
-                                                data-localize="YAML Front Matter" data-lg="Menu">YAML Front Matter</a>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="hr" class="state-off"
+                                                      data-localize="Horizontal Line" data-lg="Menu">Horizontal Line</a>
         </li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="table" class="state-off"
+                                                      data-localize="Table" data-lg="Menu">Table</a></li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="fences" class="state-off"
+                                                      data-localize="Code Fences" data-lg="Menu">Code Fences</a></li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="math_block" class="state-off"
+                                                      data-localize="Math Block" data-lg="Menu">Math Block</a></li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="toc" class="state-off"
+                                                      data-localize="Table of Contents" data-lg="Menu">Table of
+            Contents</a></li>
+        <li data-key="" data-block-auto-disable=""><a role="menuitem" data-insert="meta_block" class="state-off"
+                                                      data-localize="YAML Front Matter" data-lg="Menu">YAML Front
+            Matter</a></li>
         <li class="divider"></li>
-        <li data-key><a role="menuitem" data-insert-p="before" class="state-off" data-localize="Paragraph (before)"
-                        data-lg="Menu">Paragraph (before)</a></li>
-        <li data-key><a role="menuitem" data-insert-p="after" class="state-off" data-localize="Paragraph (after)"
-                        data-lg="Menu">Paragraph (after)</a></li>
+        <li data-key=""><a role="menuitem" data-insert-p="before" class="state-off" data-localize="Paragraph (before)"
+                           data-lg="Menu">Paragraph (before)</a></li>
+        <li data-key=""><a role="menuitem" data-insert-p="after" class="state-off" data-localize="Paragraph (after)"
+                           data-lg="Menu">Paragraph (after)</a></li>
     </ul>
     <ul class="dropdown-menu context-menu ext-context-menu" id="outline-menu" role="menu">
-        <li data-action="highlight" data-key><a role="menuitem" data-localize="Highlight Current Header" data-lg="Menu"
-                                                class="state-off">Highlight Current Header</a></li>
+        <li data-action="highlight" data-key=""><a role="menuitem" data-localize="Highlight Current Header"
+                                                   data-lg="Menu" class="state-off">Highlight Current Header</a></li>
         <li class="divider"></li>
-        <li data-action="filter" data-key><a role="menuitem" data-localize="Filter" data-lg="Front" class="state-off">Filter</a>
+        <li data-action="filter" data-key=""><a role="menuitem" data-localize="Filter" data-lg="Front"
+                                                class="state-off">Filter</a></li>
+        <li class="divider" data-collapse=""></li>
+        <li data-action="expand-all" data-key="" data-collapse=""><a role="menuitem" data-localize="Expand All"
+                                                                     data-lg="Menu" class="state-off">Expand All</a>
         </li>
-        <li class="divider" data-collapse></li>
-        <li data-action="expand-all" data-key data-collapse><a role="menuitem" data-localize="Expand All" data-lg="Menu"
-                                                               class="state-off">Expand All</a></li>
-        <li data-action="collapse-all" data-key data-collapse><a role="menuitem" data-localize="Collapse All"
-                                                                 data-lg="Menu" class="state-off">Collapse All</a></li>
-        <li class="divider" data-view></li>
-        <li data-action="collapsible-outline" data-key data-view><a role="menuitem" data-localize="Collapsible Outline"
-                                                                    data-lg="Menu" class="state-off">Collapsible
+        <li data-action="collapse-all" data-key="" data-collapse=""><a role="menuitem" data-localize="Collapse All"
+                                                                       data-lg="Menu" class="state-off">Collapse All</a>
+        </li>
+        <li class="divider" data-view=""></li>
+        <li data-action="collapsible-outline" data-key="" data-view=""><a role="menuitem"
+                                                                          data-localize="Collapsible Outline"
+                                                                          data-lg="Menu" class="state-off">Collapsible
             Outline</a></li>
-        <li data-action="flat-outline" data-key data-view><a role="menuitem" data-localize="Flat Outline" data-lg="Menu"
-                                                             class="state-off">Flat Outline</a></li>
+        <li data-action="flat-outline" data-key="" data-view=""><a role="menuitem" data-localize="Flat Outline"
+                                                                   data-lg="Menu" class="state-off">Flat Outline</a>
+        </li>
     </ul>
     <ul class="dropdown-menu context-menu ext-context-menu" id="file-menu" role="menu">
-        <li data-action="open" data-key for-file for-search><a role="menuitem" data-localize="Open" data-lg="Menu"
-                                                               class="state-off">Open</a></li>
-        <li data-action="open_in_new_window" data-key for-file for-search><a role="menuitem"
-                                                                             data-localize="Open in New Window"
-                                                                             data-lg="Menu" class="state-off">Open in
-            New Window</a></li>
-        <li data-action="open_in_new_window" data-key for-folder><a role="menuitem" data-localize="Open in New Window"
-                                                                    data-lg="Menu" class="state-off">Open in New
+        <li data-action="open" data-key="" for-file="" for-search=""><a role="menuitem" data-localize="Open"
+                                                                        data-lg="Menu" class="state-off">Open</a></li>
+        <li data-action="open_in_new_window" data-key="" for-file="" for-search=""><a role="menuitem"
+                                                                                      data-localize="Open in New Window"
+                                                                                      data-lg="Menu" class="state-off">Open
+            in New Window</a></li>
+        <li data-action="open_in_new_window" data-key="" for-folder=""><a role="menuitem"
+                                                                          data-localize="Open in New Window"
+                                                                          data-lg="Menu" class="state-off">Open in New
             Window</a></li>
-        <li class="divider" for-file for-folder></li>
-        <li data-action="undo_file_op" data-key for-undo><a role="menuitem" class="state-off">Undo</a></li>
-        <li class="divider" for-undo></li>
-        <li data-action="new_file" data-key><a role="menuitem" data-localize="New File" data-lg="Menu"
-                                               class="state-off">New File</a></li>
-        <li data-action="new_folder" data-key><a role="menuitem" data-localize="New Folder" data-lg="Menu"
-                                                 class="state-off">New Folder</a></li>
-        <li class="divider" for-search></li>
-        <li data-action="search" data-key for-search><a role="menuitem" data-localize="Search" data-lg="Menu"
-                                                        class="state-off">Search</a></li>
+        <li class="divider" for-file="" for-folder=""></li>
+        <li data-action="undo_file_op" data-key="" for-undo=""><a role="menuitem" class="state-off">Undo</a></li>
+        <li class="divider" for-undo=""></li>
+        <li data-action="new_file" data-key=""><a role="menuitem" data-localize="New File" data-lg="Menu"
+                                                  class="state-off">New File</a></li>
+        <li data-action="new_folder" data-key=""><a role="menuitem" data-localize="New Folder" data-lg="Menu"
+                                                    class="state-off">New Folder</a></li>
+        <li class="divider" for-search=""></li>
+        <li data-action="search" data-key="" for-search=""><a role="menuitem" data-localize="Search" data-lg="Menu"
+                                                              class="state-off">Search</a></li>
         <li class="divider"></li>
-        <li data-action="list_view" data-key><a role="menuitem" data-localize="Articles (List View)" data-lg="Menu"
-                                                class="state-off">Articles (List View)</a></li>
-        <li data-action="tree_view" data-key><a role="menuitem" data-localize="File Tree (Tree View)" data-lg="Menu"
-                                                class="state-off">File Tree (Tree View)</a></li>
+        <li data-action="list_view" data-key=""><a role="menuitem" data-localize="Articles (List View)" data-lg="Menu"
+                                                   class="state-off">Articles (List View)</a></li>
+        <li data-action="tree_view" data-key=""><a role="menuitem" data-localize="File Tree (Tree View)" data-lg="Menu"
+                                                   class="state-off">File Tree (Tree View)</a></li>
         <li class="divider"></li>
-        <li data-action="duplicate" for-file data-key><a role="menuitem" data-localize="Duplicate" data-lg="Menu"
-                                                         class="state-off">Duplicate</a></li>
-        <li data-action="rename" for-folder for-file data-key><a role="menuitem" data-localize="Rename" data-lg="Menu"
-                                                                 class="state-off">Rename</a></li>
-        <li class="divider" for-folder for-file></li>
-        <li data-action="delete" data-key for-folder for-file><a role="menuitem" data-localize="Move to Trash"
-                                                                 data-lg="Menu" class="state-off">Move to Trash</a></li>
-        <li class="divider" for-folder for-file for-search></li>
-        <li data-action="copy_path" data-key for-search><a role="menuitem" data-localize="Copy File Path" data-lg="Menu"
-                                                           class="state-off">Copy File Path</a></li>
-        <li data-action="reveal" data-key for-search><a role="menuitem" data-localize="Open File Location"
-                                                        data-lg="Menu" class="state-off">Open File Location</a></li>
-        <li class="divider" for-folder for-file for-search for-search-only></li>
-        <li data-action="expand_all" data-key for-search for-search-only><a role="menuitem" data-localize="Expand All"
-                                                                            data-lg="Menu" class="state-off">Expand
+        <li data-action="duplicate" for-file="" data-key=""><a role="menuitem" data-localize="Duplicate" data-lg="Menu"
+                                                               class="state-off">Duplicate</a></li>
+        <li data-action="rename" for-folder="" for-file="" data-key=""><a role="menuitem" data-localize="Rename"
+                                                                          data-lg="Menu" class="state-off">Rename</a>
+        </li>
+        <li class="divider" for-folder="" for-file=""></li>
+        <li data-action="delete" data-key="" for-folder="" for-file=""><a role="menuitem" data-localize="Move to Trash"
+                                                                          data-lg="Menu" class="state-off">Move to
+            Trash</a></li>
+        <li class="divider" for-folder="" for-file="" for-search=""></li>
+        <li data-action="copy_path" data-key="" for-search=""><a role="menuitem" data-localize="Copy File Path"
+                                                                 data-lg="Menu" class="state-off">Copy File Path</a>
+        </li>
+        <li data-action="reveal" data-key="" for-search=""><a role="menuitem" data-localize="Open File Location"
+                                                              data-lg="Menu" class="state-off">Open File Location</a>
+        </li>
+        <li class="divider" for-folder="" for-file="" for-search="" for-search-only=""></li>
+        <li data-action="expand_all" data-key="" for-search="" for-search-only=""><a role="menuitem"
+                                                                                     data-localize="Expand All"
+                                                                                     data-lg="Menu" class="state-off">Expand
             All</a></li>
-        <li data-action="collapse_all" data-key for-search for-search-only><a role="menuitem"
-                                                                              data-localize="Collapse All"
-                                                                              data-lg="Menu" class="state-off">Collapse
+        <li data-action="collapse_all" data-key="" for-search="" for-search-only=""><a role="menuitem"
+                                                                                       data-localize="Collapse All"
+                                                                                       data-lg="Menu" class="state-off">Collapse
             All</a></li>
     </ul>
     <ul class="dropdown-menu context-menu" id="user-context-menu" role="menu">
-        <li data-key><a role="menuitem" data-localize="Open" data-lg="Menu">Move to Folder...</a></li>
-        <li data-key><a role="menuitem" data-localize="Open" data-lg="Menu">Upload Image</a></li>
-        <li for-file class="divider"></li>
-        <li data-key><a role="menuitem" data-localize="Open" data-lg="Menu">Dismiss</a></li>
+        <li data-key=""><a role="menuitem" data-localize="Open" data-lg="Menu">Open</a></li>
+        <li data-key=""><a role="menuitem" data-localize="Open" data-lg="Menu">Open</a></li>
+        <li for-file="" class="divider"></li>
+        <li data-key=""><a role="menuitem" data-localize="Open" data-lg="Menu">Open</a></li>
     </ul>
 </content>
 <div id="ty-top-placeholder" style="display: none"></div>
 <footer aria-hidden="true" class="stopselect ty-footer">
-    <div class="footer-item footer-item-left" id="outline-btn-wrapper"><span id="outline-btn"
-                                                                             ty-hint="Toggle Sidebar"><i
+    <div class="footer-item footer-item-left" id="outline-btn-wrapper"><span id="outline-btn" ty-hint="Toggle Sidebar"
+                                                                             aria-label="Toggle Sidebar"><i
             class="ty-icon ty-md-radio-button-off"></i> <i class="ty-icon ty-md-radio-button-on"></i> <i
             class="ion-chevron-left"></i></span></div>
     <div class="footer-item footer-item-left footer-btn typora-sourceview-off" id="toggle-sourceview-btn"
-         ty-hint="Toggle Source Code Mode" style="display: inline-block"><i class="fa fa-code"></i> <span
-            data-localize="Exit Source Code Mode" data-lg="Front">Exit Source Code Mode</span></div>
+         ty-hint="Toggle Source Code Mode" style="display: inline-block" aria-label="Toggle Source Code Mode"><i
+            class="fa fa-code"></i> <span data-localize="Exit Source Code Mode"
+                                          data-lg="Front">Exit Source Code Mode</span></div>
     <div class="footer-item footer-item-left footer-btn" id="footer-more-btn" style="display: none"><i class="ion-more"
                                                                                                        aria-hidden="true"></i>
     </div>
@@ -1094,9 +1225,9 @@
             class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
     <div class="footer-item footer-item-left footer-btn" id="toggle-typewriter-mode-btn" style="display: none"><i
             class="ion-ios-infinite" aria-hidden="true"></i></div>
-    <div class="footer-item footer-item-right" id="footer-word-count" ty-hint="Word Count" data-lg="Panel"><span
-            id="footer-word-count-label">0 Words</span> <span class="ty-word-count-expand"><span
-            class="ion-code"></span></span></div>
+    <div class="footer-item footer-item-right" id="footer-word-count" ty-hint="Word Count" data-lg="Panel"
+         aria-label="Word Count"><span id="footer-word-count-label">0 Word</span> <span
+            class="ty-word-count-expand"><span class="ion-code"></span></span></div>
     <ul id="footer-word-count-info" class="dropdown-menu">
         <li><span class="footer-word-count-info-line" style="opacity: 0.7"><span class="footer-word-count-no-selection"
                                                                                  data-localize="Word Count"
@@ -1105,6 +1236,7 @@
         <li class="divider"></li>
         <li class="ty-footer-word-count-all">
             <table>
+                <tbody>
                 <tr data-delimiter="3">
                     <td id="footer-read-time-count-td">≤ 1</td>
                     <td data-localize="Minutes" data-lg="Panel">Minutes</td>
@@ -1125,6 +1257,7 @@
                     <td data-localize="Characters" data-lg="Panel">Characters</td>
                     <td></td>
                 </tr>
+                </tbody>
             </table>
         </li>
         <li class="footer-word-count-selection" style="margin-top: 16px; opacity: 0.7"><span
@@ -1133,6 +1266,7 @@
         <li class="divider footer-word-count-selection"></li>
         <li class="footer-word-count-selection">
             <table>
+                <tbody>
                 <tr>
                     <td id="footer-word-count-td-sel">1</td>
                     <td data-localize="Words" data-lg="Panel">Words</td>
@@ -1141,18 +1275,20 @@
                     <td id="footer-char-count-td-sel">100</td>
                     <td data-localize="Characters" data-lg="Panel">Characters</td>
                 </tr>
+                </tbody>
             </table>
         </li>
     </ul>
     <style id="footer-spell-check-download-process"></style>
-    <div class="footer-item footer-item-right" id="footer-spell-check" ty-hint="Spell Check" data-lg="Panel"><span
-            id="footer-spell-check-downloaded-status"><span class="ion-checkmark-circled"
-                                                            style="font-size: 1.1em;margin-right: 3px"></span> </span><span
+    <div class="footer-item footer-item-right" id="footer-spell-check" ty-hint="Spell Check" data-lg="Panel"
+         aria-label="Spell Check"><span id="footer-spell-check-downloaded-status"><span class="ion-checkmark-circled"
+                                                                                        style="font-size: 1.1em;margin-right: 3px"></span> </span><span
             id="footer-spell-check-error-status"><span class="ion-alert-circled"
                                                        style="font-size: 1.1em;margin-right: 3px"></span> </span><span
             id="footer-spell-check-download-status"><span class="ion-refreshing"
                                                           style="margin-right: 2px"></span></span> <span
-            id="footer-spell-check-label"></span></div>
+            id="footer-spell-check-label"><span class="ty-icon ty-spellcheck"
+                                                style="font-size: 1.1em;vertical-align: middle;"></span></span></div>
 </footer>
 <ul id="spell-check-panel" class="dropdown-menu">
     <div class="ty-lang-control">
@@ -1220,7 +1356,7 @@
                         data-lg="Front">Cancel
                 </button>
                 <button type="button" style="float:left" class="btn btn-default" data-localize="Learn More…"
-                        data-lg="Front">Learn Morel…
+                        data-lg="Front">Learn More…
                 </button>
             </div>
         </div>
@@ -1282,11 +1418,13 @@
 </div>
 <div id="megamenu-content" aria-hidden="true" data-pattern="pattern/cubes.png" class="megamenu-content stopselect">
     <table style="display:none">
+        <tbody>
         <tr id="recent-file-item-pattern" class="recent-file-item">
             <td class="recent-file-name"></td>
             <td class="recent-file-dir"></td>
             <td class="recent-file-path" style="display:none"></td>
         </tr>
+        </tbody>
     </table>
     <div class="megamenu-section" id="megamenu-section-open">
         <div class="megamenu-menu-panel"><h1 data-localize="Open" data-lg="Menu">Open</h1>
@@ -1300,7 +1438,7 @@
         </div>
         <div class="megamenu-menu-panel"><h2 data-localize="Recent Documents" data-lg="Panel">Recent Documents</h2>
             <div id="recent-file-panel"><input id="recent-file-panel-search-input" class="quiet-focus search"
-                                               type="text" placeholder="Search for…" data-localize="Search for…"
+                                               type="text" placeholder="Search…" data-localize="Search for…"
                                                data-lg="Panel">
                 <div class="dropdown" id="recent-file-panel-action-btn-container">
                     <button id="recent-file-panel-action-btn" class="btn" type="button" data-toggle="dropdown"
@@ -1340,7 +1478,7 @@
             <div class="long-btn-wrap" id="export-custom-container"></div>
             <p class="preference-item-hint hide-when-pandoc-installed" style="margin-top:30px"
                data-localize="File formats under 'More Formats' sections needs <a class='open-pandoc-guide'>Pandoc to be installed</a>."
-               data-lg="Panel" data-lt="html">File formats under "More Formats" sections needs <a
+               data-lg="Panel" data-lt="html">File formats under 'More Formats' sections needs <a
                     class="open-pandoc-guide">Pandoc to be installed</a>.</p></div>
         <div class="megamenu-menu-panel megamenu-menu-content-section"><h1 data-localize="Image" data-lg="Menu">
             Image</h1>
@@ -1353,19 +1491,6 @@
     <div class="megamenu-section" id="megamenu-section-preference"></div>
     <div class="megamenu-section" id="megamenu-section-about">
         <div class="megamenu-menu-panel" id="about-content">
-            <div class="megamenu-menu-content-section" id="about-content-about-section"><h1 data-localize="About"
-                                                                                            data-lg="Menu">About</h1>
-                <div class="about-content-main">
-                    <div class="about-content-icon"><img src="../static/icons/icon_128x128.png"></div>
-                    <div class="about-content-description"><h2>Typora<span class="about-content-hint"> for Windows / Linux</span>
-                    </h2>
-                        <div class="about-content-slogon">MADE WITH ❤ BY <span style="color:#4183C4">ABNER</span></div>
-                    </div>
-                    <div class="about-content-meta"><span id="about-page-version-label">version 0.8 (alpha)</span> ✩
-                        <span><a href="http://typora.io">website</a></span> ✩ <span><a
-                                href="https://twitter.com/typora">@typora</a></span></div>
-                </div>
-            </div>
             <div class="megamenu-menu-content-section"><h1 data-localize="Help" data-lg="Menu">Help</h1>
                 <table class="table table-striped table-hover" id="typora-help-md-table">
                     <tbody class="list-js-list">
@@ -1439,7 +1564,6 @@
         </div>
     </div>
 </div>
-
 <div id="uni-preference-panel" class="uni-preference-panel"></div>
 <div class="modal fade fullscreen-modal stopselect" id="preference-dialog" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -1457,7 +1581,23 @@
 <div class="modal fade fullscreen-modal stopselect" id="about-dialog" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-body"></div>
+            <div class="modal-body">
+                <div class="megamenu-menu-content-section" id="about-content-about-section"><h1 data-localize="About"
+                                                                                                data-lg="Menu">
+                    About</h1>
+                    <div class="about-content-main">
+                        <div class="about-content-icon"><img src="../../static/icons/icon_128x128.png"></div>
+                        <div class="about-content-description"><h2>Typora<span class="about-content-hint"> for Windows / Linux</span>
+                        </h2>
+                            <div class="about-content-slogon">MADE WITH ❤ BY <span style="color:#4183C4">ABNER</span>
+                            </div>
+                        </div>
+                        <div class="about-content-meta"><span id="about-page-version-label">version 0.9.96(beta)</span>
+                            ✩ <span><a href="http://typora.io">website</a></span> ✩ <span><a
+                                    href="https://twitter.com/typora">@typora</a></span></div>
+                    </div>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal" data-localize="Close" data-lg="Front">Close
                 </button>
@@ -1466,7 +1606,7 @@
     </div>
 </div>
 <div id="save-error-banner" style="display: none">
-    <div class="content" data-localize="ave File Failed!" data-lg="Front">Save File Failed!</div>
+    <div class="content" data-localize="ave File Failed!" data-lg="Front">ave File Failed!</div>
     <div class="control">
         <button type="button" class="btn" data-localize="Copy Content" data-lg="Panel">Copy Content</button>
         <i class="fa fa-chevron-down" id="trigger-save-error-dialog" aria-hidden="true"></i></div>
@@ -1494,8 +1634,8 @@
 delete window.require;
 delete window.exports;
 delete window.module;</script>
-<script type="text/javascript" src="../static/js/MathJax.js"></script>
-<script src="../static/js/frame.js" defer="defer"></script>
+<script type="text/javascript" src="../../static/js/MathJax.js"></script>
+<script src="../../static/js/frame.js" defer="defer"></script>
 <script>var mode = "release";
 window._releaseNo = "81b8b7ee";
 window.debugMode = (mode != "release");
@@ -1549,9 +1689,9 @@ if (debugMode) {
     document.querySelector("content").innerHTML = document.querySelector("content").innerHTML + getPage("context-menu.html");
     document.querySelector("#megamenu-section-about").innerHTML = getPage("about.html");
 
-    SystemJS.import("../static/js/frame.js");
+    SystemJS.import("../../static/js/frame.js");
 }</script>
-<script src="../static/js/pdf-designer.min.js" defer="defer" async></script>
-<script src="../static/js/pdf-lib.min.js" defer="defer" async></script>
+<script src="../../static/js/pdf-designer.min.js" defer="defer" async=""></script>
+<script src="../../static/js/pdf-lib.min.js" defer="defer" async=""></script>
 </body>
 </html>
